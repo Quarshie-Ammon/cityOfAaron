@@ -5,6 +5,7 @@
  */
 package cityofaaron;
 
+import byui.cit260.cityofaaron.model.Location;
 import byui.cit260.cityofaaron.model.Player;
 import byui.cit260.cityofaaron.model.TeamMember;
 
@@ -24,11 +25,20 @@ public class CityOfAaron {
         
         String playerOneName = playerOne.getName();
         
-        System.out.println("Player Name = " + playerOneName );
+            System.out.println("Player Name = " + playerOneName );
         
         String teamMemberName = TeamMember.Ammon.getName();
         
-        System.out.println("Team Member = " + teamMemberName);
+            System.out.println("Team Member = " + teamMemberName);
+        
+        Location initialPosition = new Location();
+        
+        initialPosition.setDescription("In the woods.");
+        initialPosition.setSymbol("Shield");
+                
+            System.out.println(initialPosition.toString());
+        
+        
     }
     
 }
