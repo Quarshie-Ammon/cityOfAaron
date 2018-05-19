@@ -59,23 +59,7 @@ public class CityOfAaron {
         cropDataTest.setEatenByRats(3);
         cropDataTest.setWheatForPeople(20);
         
-        int cropDataYear = cropDataTest.getYear();
-        int cropDataPopulation = cropDataTest.getPopulation();
-        int cropDataAcresOwned = cropDataTest.getAcresOwned();
-        int cropDatacropYield = cropDataTest.getCropYield();
-        int cropDatawheatInStore = cropDataTest.getWheatInStore();
-        int cropDatanumberWhoDied = cropDataTest.getNumberWhoDied();
-        int cropDataNewPeople = cropDataTest.getNewPeople();
-        int cropDataHarvest = cropDataTest.getHarvest();
-        int cropDataHarvestAfterOffering = cropDataTest.getHarvestAfterOffering();
-        int cropDataOffering = cropDataTest.getOffering();
-        int cropDataOfferingBushels = cropDataTest.getOfferingBushels();
-        int cropDataPeopleFed = cropDataTest.getPeopleFed();
-        int cropDataAcresPlanted = cropDataTest.getAcresPlanted();
-        int cropDataNumStarved = cropDataTest.getNumStarved();
-        int cropDataEatenByRats = cropDataTest.getEatenByRats();
-        int cropDataWheatForPeople = cropDataTest.getWheatForPeople();
-        
+              
         System.out.println(cropDataTest.toString());
         
         // end cropData test code
