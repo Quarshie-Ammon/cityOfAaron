@@ -6,36 +6,43 @@
 package byui.cit260.cityofaaron.control;
 import byui.cit260.cityofaaron.model.*;
 import java.util.Random;
-import java.util.Scanner;
 /**
  *
  * @author Saturn
  */
 public class InventoryControl {
     
-    public static void buyLand(int landPrice, int acresToBuy, CropData cropData){
-        CropData cropData1 = new CropData();
-        int landPrice = cropData1.calcLandCost;
-        System.out.println("How many acres of new land do you want to buy?");
+  public static int buyLand(int landPrice, int acresToBuy, CropData cropData) {
         
-        Scanner keyboard = new Scanner(System.in);
-        acresToBuy = keyboard.nextInt();
-        
-        if(acresToBuy < 1){
-            System.out.println("How many acres of new land do you want to buy?");
-            acresToBuy = keyboard.nextInt();
-        }
-        
-        
-        int wheatInStore = cropData1.getWheatInStore();
-        if((wheatInStore < (acresToBuy * landPrice)) || (wheatInStore < 0)){
-            System.out.println("Not enough wheat!");
-            System.out.println("How many acres of new land do you want to buy?");
-        }
+    int wheatInStore = cropData.getWheatInStore();
+    int population = cropData.getPopulation();
+    int acresOwned = cropData.getAcresOwned();
+    
+
+    if (acresToBuy < 0) {
+        return -1;
     }
+
+    if (acresToBuy * landPrice > wheatInStore) {
+        return -1;
+    }
+
+    if (population < ((acresOwned + acresToBuy) / 10)) {
+        return -1;
+    }
+
+    acresOwned += acresToBuy;
+    cropData.setAcresOwned(acresOwned);
+
+    wheatInStore -= (acresToBuy * landPrice);
+    cropData.setWheatInStore(wheatInStore);
+
+    return acresOwned;
+
+} 
                 
-       private static Random random = new Random();  
-public static int calcLandCost(){
+  private static Random random = new Random();  
+  public static int calcLandCost(){
   int landPrice = random.nextInt(28-17)+ 17;
   return landPrice;
 } 

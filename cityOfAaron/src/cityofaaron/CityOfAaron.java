@@ -23,7 +23,7 @@ public class CityOfAaron {
     public static void main(String[] args) {
         Player playerOne = new Player();
         CropData cropDataTest = new CropData();
-        InventoryControl CalcTest = new InventoryControl();
+        InventoryControl InvTest = new InventoryControl();
         
         playerOne.setName("Aaron");
         
@@ -63,10 +63,14 @@ public class CityOfAaron {
         
               
         System.out.println(cropDataTest.toString());
-        System.out.println(CalcTest.CalcLandCost());
-        
         
         // end cropData test code
+        
+        // begin test cases for buyLand()
+        
+        
+        
+        // end test cases for buyLand()
         
     }
     
