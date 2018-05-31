@@ -6,6 +6,7 @@
 package byui.cit260.cityofaaron.model;
 
 import java.io.Serializable;
+import java.util.Random;
 
 /**
  *
@@ -253,6 +254,13 @@ public class CropData implements Serializable{
         return "CropData{" + "year=" + year + ", population=" + population + ", acresOwned=" + acresOwned + ", cropYield=" + cropYield + ", wheatInStore=" + wheatInStore + ", numberWhoDied=" + numberWhoDied + ", newPeople=" + newPeople + ", harvest=" + harvest + ", harvestAfterOffering=" + harvestAfterOffering + ", offering=" + offering + ", offeringBushels=" + offeringBushels + ", peopleFed=" + peopleFed + ", acresPlanted=" + acresPlanted + ", numStarved=" + numStarved + ", eatenByRats=" + eatenByRats + ", wheatForPeople=" + wheatForPeople + '}';
     }
     
+    private static Random random = new Random();
+   
+    public static int calcLandCost()
+   {
+       int landPrice = random.nextInt(27) + 17;
+       return landPrice;
+}
    
     
 }
