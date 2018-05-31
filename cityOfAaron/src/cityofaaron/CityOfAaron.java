@@ -9,6 +9,7 @@ import byui.cit260.cityofaaron.model.Location;
 import byui.cit260.cityofaaron.model.Player;
 import byui.cit260.cityofaaron.model.TeamMember;
 import byui.cit260.cityofaaron.model.CropData;
+import byui.cit260.cityofaaron.control.InventoryControl;
 
 /**
  *
@@ -22,6 +23,7 @@ public class CityOfAaron {
     public static void main(String[] args) {
         Player playerOne = new Player();
         CropData cropDataTest = new CropData();
+        InventoryControl CalcTest = new InventoryControl();
         
         playerOne.setName("Aaron");
         
@@ -61,6 +63,8 @@ public class CityOfAaron {
         
               
         System.out.println(cropDataTest.toString());
+        System.out.println(CalcTest.CalcLandCost());
+        
         
         // end cropData test code
         

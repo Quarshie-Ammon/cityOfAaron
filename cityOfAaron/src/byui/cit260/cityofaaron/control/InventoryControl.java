@@ -5,8 +5,7 @@
  */
 package byui.cit260.cityofaaron.control;
 import byui.cit260.cityofaaron.model.*;
-import static byui.cit260.cityofaaron.model.CropData.calcLandCost;
- import java.util.Random;
+import java.util.Random;
 import java.util.Scanner;
 /**
  *
@@ -34,5 +33,12 @@ public class InventoryControl {
             System.out.println("How many acres of new land do you want to buy?");
         }
     }
+                
+       private static Random random = new Random();  
+public static int calcLandCost(){
+  int landPrice = random.nextInt(28-17)+ 17;
+  return landPrice;
+} 
+    
     
 }
