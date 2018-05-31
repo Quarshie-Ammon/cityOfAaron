@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package byui.cit260.cityofaaron.control;
 import byui.cit260.cityofaaron.model.*;
 import java.util.Random;
@@ -13,7 +9,8 @@ import java.util.Random;
 public class InventoryControl {
     
   public static int buyLand(int landPrice, int acresToBuy, CropData cropData) {
-        
+     
+      // get values from cropData
     int wheatInStore = cropData.getWheatInStore();
     int population = cropData.getPopulation();
     int acresOwned = cropData.getAcresOwned();
@@ -23,11 +20,11 @@ public class InventoryControl {
         return -1;
     }
 
-    if (acresToBuy * landPrice > wheatInStore) {
+    if (population < ((acresOwned + acresToBuy) / 10)) {
         return -1;
     }
-
-    if (population < ((acresOwned + acresToBuy) / 10)) {
+    
+        if (acresToBuy * landPrice > wheatInStore) {
         return -1;
     }
 
@@ -43,6 +40,7 @@ public class InventoryControl {
                 
   private static Random random = new Random();  
   public static int calcLandCost(){
+  // get value between     
   int landPrice = random.nextInt(28-17)+ 17;
   return landPrice;
 } 
