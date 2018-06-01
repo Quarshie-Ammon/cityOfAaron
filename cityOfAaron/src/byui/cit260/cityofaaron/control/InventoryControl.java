@@ -7,41 +7,64 @@ import java.util.Random;
  * @author Saturn
  */
 public class InventoryControl {
+    //buyLand method
+    //Purpose: Buy land - Adds land to acers owned and subtracts cost from 
+    //    wheatInStore
+    //Parameters: landPrice, the number of acres to buy, and a reference to a
+    //    cropData object
+    //Pre-conditions: acresToBuy > 0 and population < (acersOwned + acresToBuy)/10
+    //    and wheatInStore > acresToBuy * landPrice
+    // Returns: The number of acres owned after adding land bought to acresOwned
     
   public static int buyLand(int landPrice, int acresToBuy, CropData cropData) {
+      
      
-      // get values from cropData
+     
+      //get values from cropData
     int wheatInStore = cropData.getWheatInStore();
     int population = cropData.getPopulation();
     int acresOwned = cropData.getAcresOwned();
     
-
+      //if acresToBuy < 0, return -1
     if (acresToBuy < 0) {
         return -1;
     }
 
+      //if population < (acresOwned + acresToBuy/10), return -1
     if (population < ((acresOwned + acresToBuy) / 10)) {
         return -1;
     }
     
+       //if acresToBuy * landPrice > wheatInStore, return -1
         if (acresToBuy * landPrice > wheatInStore) {
         return -1;
     }
 
+       //acresOwned = acresOwned + acresToBuy
+       //update cropData.acresOwned variable
     acresOwned += acresToBuy;
     cropData.setAcresOwned(acresOwned);
 
+       //wheatInStore = wheatInStore - (acresToBuy * landPrice)
+       //update cropData.wheatInStore variable
     wheatInStore -= (acresToBuy * landPrice);
     cropData.setWheatInStore(wheatInStore);
 
+      //Return number of acresOwned
     return acresOwned;
 
 } 
-                
+  
+  //calcLandCost
+  //Purpose: Generate random number between 17 and 27 to caclulate landPrice
+  //Parameters: none
+  //Preconditions: none
+  //Returns: landPrice
   private static Random random = new Random();  
   public static int calcLandCost(){
-  // get value between     
+  // get random value between 17 and 27  
   int landPrice = random.nextInt(28-17)+ 17;
+  //return value as landPrice
   return landPrice;
 } 
     
