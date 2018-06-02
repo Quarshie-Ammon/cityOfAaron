@@ -67,6 +67,37 @@ public class InventoryControl {
   //return value as landPrice
   return landPrice;
 } 
-    
-    
+
+    //feedPeople method
+    //Purpose: to set aside wheat to feed people
+    //Parameters: amountof wheat to buy to feed the people, 
+    // and a reference to a cropData object
+    //Pre-conditions: wheatForPeople > 0 and wheatInStore >  wheatForPeople
+    // Returns: THe amount of wheat yhou have set aside for the people
+   public static int feedPeople(int wheatForPeople, CropData cropData) {
+       //get values from cropData
+       int wheatInStore = cropData.getWheatInStore();
+       
+       //if wheatForPeople < 0, return -1
+       if (wheatForPeople < 0) {
+        return -1;
+    }
+      
+       //if wheatInStore < wheatForPeople, return -1
+    if (wheatInStore < wheatForPeople) {
+        return -1;
+    }
+       //wheatInStore = wheatInStore - wheatForPeople
+       //update cropData.wheatForPeople variable
+       wheatInStore -= wheatForPeople;
+       cropData.setWheatInStore(wheatInStore);
+      
+       //wheatForPeople = newly set aside wheat for people + wheat already stored for people
+       //update cropData.wheatForPeople variable
+       wheatForPeople+=cropData.getWheatForPeople();
+       cropData.setWheatForPeople(wheatForPeople);
+        
+  //return value as wheatForPeople
+  return wheatForPeople;    
+ }
 }
