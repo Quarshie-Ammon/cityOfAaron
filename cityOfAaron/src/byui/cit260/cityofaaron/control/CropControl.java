@@ -6,7 +6,7 @@ import java.util.Random;
  *
  * @author Saturn
  */
-public class InventoryControl {
+public class CropControl {
     //buyLand method
     //Purpose: Buy land - Adds land to acers owned and subtracts cost from 
     //    wheatInStore

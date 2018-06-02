@@ -20,7 +20,7 @@ public class TestInventory {
          System.out.println("Test Case #1: VALID");
         
         CropData ourCrops = new CropData();
-        InventoryControl landCost = new InventoryControl();
+        CropControl landCost = new CropControl();
  
         
         int landPrice = landCost.calcLandCost() ;
@@ -31,7 +31,7 @@ public class TestInventory {
         ourCrops.setAcresOwned(20);
         ourCrops.setPopulation(3);
         
-        int result = InventoryControl.buyLand(landPrice, acresToBuy, ourCrops);
+        int result = CropControl.buyLand(landPrice, acresToBuy, ourCrops);
         System.out.println("Intended Result:" + theResult + "\nActual Result:" + result +"\n");
 }
     public void buyLandTest2() {
@@ -41,7 +41,7 @@ public class TestInventory {
          System.out.println("Test Case #2: INVALID");
         
         CropData ourCrops = new CropData();
-        InventoryControl landCost = new InventoryControl();
+        CropControl landCost = new CropControl();
  
         
         int landPrice = landCost.calcLandCost() ;
@@ -52,7 +52,7 @@ public class TestInventory {
         ourCrops.setAcresOwned(9);
         ourCrops.setPopulation(2);
         
-        int result = InventoryControl.buyLand(landPrice, acresToBuy, ourCrops);
+        int result = CropControl.buyLand(landPrice, acresToBuy, ourCrops);
         System.out.println("Intended Result:" + theResult + "\nActual Result:" + result +"\n");
 }
 public void buyLandTest3() {
@@ -62,7 +62,7 @@ public void buyLandTest3() {
          System.out.println("Test Case #3: INVALID");
         
         CropData ourCrops = new CropData();
-        InventoryControl landCost = new InventoryControl();
+        CropControl landCost = new CropControl();
  
         
         int landPrice = landCost.calcLandCost() ;
@@ -73,7 +73,7 @@ public void buyLandTest3() {
         ourCrops.setAcresOwned(20);
         ourCrops.setPopulation(1);
         
-        int result = InventoryControl.buyLand(landPrice, acresToBuy, ourCrops);
+        int result = CropControl.buyLand(landPrice, acresToBuy, ourCrops);
         System.out.println("Intended Result:" + theResult + "\nActual Result:" + result +"\n");
 }
 public void buyLandTest4() {
@@ -83,7 +83,7 @@ public void buyLandTest4() {
          System.out.println("Test Case #4: INVALID");
         
         CropData ourCrops = new CropData();
-        InventoryControl landCost = new InventoryControl();
+        CropControl landCost = new CropControl();
  
         
         int landPrice = landCost.calcLandCost() ;
@@ -94,7 +94,7 @@ public void buyLandTest4() {
         ourCrops.setAcresOwned(20);
         ourCrops.setPopulation(3);
         
-        int result = InventoryControl.buyLand(landPrice, acresToBuy, ourCrops);
+        int result = CropControl.buyLand(landPrice, acresToBuy, ourCrops);
         System.out.println("Intended Result:" + theResult + "\nActual Result:" + result +"\n");
 }
 }
