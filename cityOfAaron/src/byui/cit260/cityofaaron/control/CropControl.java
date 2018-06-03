@@ -2,6 +2,7 @@
 package byui.cit260.cityofaaron.control;
 import byui.cit260.cityofaaron.model.*;
 import java.util.Random;
+import java.util.Scanner;
 /**
  *
  * @author Saturn
@@ -125,5 +126,56 @@ public class CropControl {
        cropData.setWheatInStore(newWheatValue);
        // Return the offering percentage accepted by the method
        return offering;
-}
+    }
+
+//plantCrops method
+//Purpose: to plant crops
+//Parameters: number of acres of land to plant(user input),
+// and a reference to a cropData object
+//Pre-conditions: wheatInStore > 0 and acresPlanted <= acresOwned.
+// Returns: number of acres of land planted with wheat
+
+    /**
+     *
+     * @param acresPlanted
+     * @param cropData
+     * @return
+     */
+
+public static int plantCrops(int acresPlanted, CropData cropData){
+    
+    //get values from cropData
+    int wheatInStore = cropData.getWheatInStore();
+    int acresOwned = cropData.getAcresOwned();
+    
+    //ask the user how many acres of land is to be planted with wheat
+    System.out.println("How many acres of land do you want to plant?");
+    
+    Scanner acres = new Scanner(System.in);
+    int acresToPlant = acres.nextInt();
+    
+    //if acresToPlant < 0, return -1
+    if(acresToPlant < 0){
+        return -1;
+    }
+    
+    //if acresOwned < acresToPlant, return -1
+    if(acresOwned < acresToPlant){
+        return -1;
+    }
+    
+     //Calculate the number of bushels of wheat required to plant this number of acres
+    int bushelsPlanted = acresToPlant;
+    
+    //if wheatInStore < acresToPlant, return -1
+    if(wheatInStore < acresToPlant){
+        return -1;
+    }
+    
+    //Calculate and set amount of wheat in store after subtracting wheat planted.
+    int newWheatValue = wheatInStore - bushelsPlanted;
+    cropData.setWheatInStore(newWheatValue);
+    
+    return acresPlanted;
+}    
 }
