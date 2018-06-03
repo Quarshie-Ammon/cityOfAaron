@@ -20,7 +20,7 @@ public class CityOfAaron {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 //        Player playerOne = new Player();
 //        CropData cropDataTest = new CropData();
         TestInventory InvTest = new TestInventory();
@@ -66,15 +66,18 @@ public class CityOfAaron {
         
         // end cropData test code
         
-        // begin test cases for buyLand()
+        // begin test cases for buyLand() & setOffering()
         
         InvTest.buyLandTest1();
         InvTest.buyLandTest2();
         InvTest.buyLandTest3();
         InvTest.buyLandTest4();
+        InvTest.setOfferingTest1();
+        InvTest.setOfferingTest2();
+        InvTest.setOfferingTest3();
         
         
-        // end test cases for buyLand()
+        // end test cases
         
     }
     

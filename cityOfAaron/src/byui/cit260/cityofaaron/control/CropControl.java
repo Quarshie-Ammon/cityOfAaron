@@ -100,4 +100,30 @@ public class CropControl {
   //return value as wheatForPeople
   return wheatForPeople;    
  }
+    //The setOffering method
+    //Purpose: To calculate and pay offering
+    //Paramenters: The percentage of the offering to come from the harvest
+    //Pre-conditons: Offerings must be greater or equal to zero and less than 100
+    // @offering
+    // @CropData
+    public static int setOffering(int offering, CropData cropData)  {
+         //if > 100 return -1 //if <  0 return -1
+        if (offering>100 || offering < 0) {
+            
+            System.out.println("Please enter a value between 0-100");
+            return -1;
+        }
+       // Set the offering provided as a parameter and checked for contraints
+       cropData.setOffering(offering);
+       // Do math with the offering value to calculate the amount of wheat to be offered
+       int yield = cropData.getHarvest();
+       int offeringBushels = yield * (offering / 100);
+       // Set the caclulated offering in wheat bushels
+       cropData.setOfferingBushels(offeringBushels);
+       // Calculate and set the new wheat value after subttracting the offering
+       int newWheatValue = yield - offeringBushels;
+       cropData.setWheatInStore(newWheatValue);
+       // Return the offering percentage accepted by the method
+       return offering;
+}
 }

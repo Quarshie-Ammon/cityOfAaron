@@ -97,4 +97,55 @@ public void buyLandTest4() {
         int result = CropControl.buyLand(landPrice, acresToBuy, ourCrops);
         System.out.println("Intended Result:" + theResult + "\nActual Result:" + result +"\n");
 }
+public void setOfferingTest1() throws Exception{
+        
+        System.out.println("setOferring() Valid Test");
+        
+         System.out.println("Test Case #1: Valid");
+        
+        CropData ourCrops = new CropData(); 
+        
+        int offering = 10;
+        int harvest = 100;
+        int expectedReturn = 10;
+
+        ourCrops.setHarvest(harvest);
+        
+        int result = CropControl.setOffering(offering, ourCrops);
+        System.out.println("Intended Result:" + expectedReturn + "\nActual Result:" + result +"\n");
+}
+public void setOfferingTest2() throws Exception{
+        
+        System.out.println("setOferring() 'Negative Offering of -10'");
+        
+         System.out.println("Test Case #2: Invalid");
+        
+        CropData ourCrops = new CropData(); 
+        
+        int offering = -10;
+        int harvest = 100;
+        int expectedReturn = -1;
+
+        ourCrops.setHarvest(harvest);
+        
+        int result = CropControl.setOffering(offering, ourCrops);
+        System.out.println("Intended Result:" + expectedReturn + "\nActual Result:" + result +"\n");
+}
+public void setOfferingTest3() throws Exception{
+        
+        System.out.println("setOferring() 'Offering over 100'");
+        
+         System.out.println("Test Case #3: Invalid");
+        
+        CropData ourCrops = new CropData(); 
+        
+        int offering = 105;
+        int harvest = 100;
+        int expectedReturn = -2;
+
+        ourCrops.setHarvest(harvest);
+        
+        int result = CropControl.setOffering(offering, ourCrops);
+        System.out.println("Intended Result:" + expectedReturn + "\nActual Result:" + result +"\n");
+}
 }
