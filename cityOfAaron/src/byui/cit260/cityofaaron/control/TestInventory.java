@@ -148,4 +148,19 @@ public void setOfferingTest3() throws Exception{
         int result = CropControl.setOffering(offering, ourCrops);
         System.out.println("Intended Result:" + expectedReturn + "\nActual Result:" + result +"\n");
 }
+
+public void plantCropTest1() throws Exception{
+        
+        System.out.println("plantCrops() Valid Test");
+        
+         System.out.println("Test Case #1: Valid");
+        
+        CropData ourCrops = new CropData(); 
+        
+        int acresPlanted = 10;
+        int expectedReturn = 10;
+        
+        int result = CropControl.plantCrops(acresPlanted, ourCrops);
+        System.out.println("Intended Result:" + expectedReturn + "\nActual Result:" + result +"\n");
+}
 }
