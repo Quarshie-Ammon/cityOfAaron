@@ -175,7 +175,7 @@ public static int plantCrops(int acresPlanted, CropData cropData){
     //Calculate and set amount of wheat in store after subtracting wheat planted.
     int newWheatValue = wheatInStore - bushelsPlanted;
     cropData.setWheatInStore(newWheatValue);
-    
-    return acresPlanted;
+   
+    return bushelsPlanted;
 }    
 }

@@ -155,12 +155,87 @@ public void plantCropTest1() throws Exception{
         
          System.out.println("Test Case #1: Valid");
         
-        CropData ourCrops = new CropData(); 
+        CropData ourCrops = new CropData();
         
-        int acresPlanted = 10;
-        int expectedReturn = 10;
+        ourCrops.setWheatInStore(300);
+        ourCrops.setAcresOwned(70);
         
-        int result = CropControl.plantCrops(acresPlanted, ourCrops);
+        int acresToPlant = 50;
+        int expectedReturn = 50;
+        
+        int result = CropControl.plantCrops(acresToPlant, ourCrops);
         System.out.println("Intended Result:" + expectedReturn + "\nActual Result:" + result +"\n");
 }
+
+public void plantCropTest2() throws Exception{
+        
+        System.out.println("plantCrops() 'acresOwned too low'");
+        
+         System.out.println("Test Case #2: invalid");
+        
+        CropData ourCrops = new CropData();
+        
+        ourCrops.setWheatInStore(300);
+        ourCrops.setAcresOwned(15);
+        
+        int acresToPlant = 50;
+        int expectedReturn = -1;
+        
+        int result = CropControl.plantCrops(acresToPlant, ourCrops);
+        System.out.println("Intended Result:" + expectedReturn + "\nActual Result:" + result +"\n");
+}
+
+public void plantCropTest3() throws Exception{
+        
+        System.out.println("plantCrops() 'acresToPlant less than 1'");
+        
+         System.out.println("Test Case #3: invalid");
+        
+        CropData ourCrops = new CropData(); 
+        
+        ourCrops.setWheatInStore(250);
+        ourCrops.setAcresOwned(70);
+        
+        int acresToPlant = 0;
+        int expectedReturn = -1;
+        
+        int result = CropControl.plantCrops(acresToPlant, ourCrops);
+        System.out.println("Intended Result:" + expectedReturn + "\nActual Result:" + result +"\n");
+    }
+
+public void plantCropTest4() throws Exception{
+        
+        System.out.println("plantCrops() 'acresToPlant too high'");
+        
+         System.out.println("Test Case #4: invalid");
+        
+        CropData ourCrops = new CropData(); 
+        
+        ourCrops.setWheatInStore(250);
+        ourCrops.setAcresOwned(30);
+        
+        int acresToPlant = 35;
+        int expectedReturn = -1;
+        
+        int result = CropControl.plantCrops(acresToPlant, ourCrops);
+        System.out.println("Intended Result:" + expectedReturn + "\nActual Result:" + result +"\n");
+    }
+
+public void plantCropTest5() throws Exception{
+        
+        System.out.println("plantCrops() 'not enough wheatInStore'");
+        
+         System.out.println("Test Case #5: invalid");
+        
+        CropData ourCrops = new CropData(); 
+        
+        ourCrops.setWheatInStore(40);
+        ourCrops.setAcresOwned(70);
+        
+        int acresToPlant = 50;
+        int expectedReturn = -1;
+        
+        int result = CropControl.plantCrops(acresToPlant, ourCrops);
+        System.out.println("Intended Result:" + expectedReturn + "\nActual Result:" + result +"\n");
+    }
 }
