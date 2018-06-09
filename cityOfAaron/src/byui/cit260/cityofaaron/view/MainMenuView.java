@@ -8,6 +8,7 @@ package byui.cit260.cityofaaron.view;
 import java.util.Scanner; 
 import cityofaaron.CityOfAaron;
 import byui.cit260.cityofaaron.model.Player;
+import byui.cit260.cityofaaron.model.*;
 
 
 
@@ -32,7 +33,7 @@ public class MainMenuView
         do
         {
         // Display the menu
-        System.out.println(mainMenu);
+        System.out.println(theMenu);
         
         // Prompt the user and get the user’s input
         menuOption = getMenuOption();
@@ -55,9 +56,11 @@ public MainMenuView()
     theMenu = "\n" +
         "**********************************\n" +
         "* CITY OF AARON: MAIN GAME MENU  *\n" +
-        "**********************************\n" +
+        "**********************************\n\n" +
         "	1 - Start new game\n" +
-        "	2 - Get and start a saved game\n" + " 3 - Get help on playing the game\n" + " 4 - Save game\n" +
+        "	2 - Get and start a saved game\n" + 
+        "        3 - Get help on playing the game\n" + 
+        "        4 - Save game\n" +
         "	5 - Quit\n";
     max = 5;
 }
@@ -130,18 +133,19 @@ public MainMenuView()
     public void startNewGame()
     {
         //Create a new Game object.
-        Game theGame = new Game;
+        Game theGame = new Game();
         // Save a reference to it in the GameProject class.
-        GameProject.setCurrentGame(theGame);
+        CityOfAaron.setCurrentGame(theGame);
         // Display the Banner Page.
         System.out.println("Welcome to the city of Aaron.");
         // Create a new Player object 
         Player thePlayer = new Player();
         // Prompt for and get the user’s name. String name;
+        String name;
         System.out.println("Please type in your first name: ");
         name = keyboard.next();
         // Save the user’s name in the Player object
-        thePlayer.setPlayerName(name);
+        thePlayer.setName(name);
         // Save a reference to the player object in the Game object
         theGame.setPlayer(thePlayer);
         // Display a welcome message
@@ -150,7 +154,8 @@ public MainMenuView()
     }
     /**
     *	The startSavedGame method
-    *	Purpose: creates game object and starts saved game
+    *	Purpose: creates game object and star
+    * ts saved game
     *	Parameters: none
     *	Returns: none
     */
