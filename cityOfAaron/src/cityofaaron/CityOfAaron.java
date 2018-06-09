@@ -10,6 +10,7 @@ import byui.cit260.cityofaaron.model.Player;
 import byui.cit260.cityofaaron.model.TeamMember;
 import byui.cit260.cityofaaron.model.CropData;
 import byui.cit260.cityofaaron.control.TestInventory;
+import byui.cit260.cityofaaron.View.*;
 
 /**
  *
@@ -17,13 +18,16 @@ import byui.cit260.cityofaaron.control.TestInventory;
  */
 public class CityOfAaron {
 
-    /**
-     * @param args the command line arguments
-     */
+    // variable for keeping a reference to the Game object 
+    private static Game theGame = null;
+    
     public static void main(String[] args) throws Exception {
+        MainMenuView mmv = new MainMenuView();
+        mmv.displayMenuView();
 //        Player playerOne = new Player();
 //        CropData cropDataTest = new CropData();
-        TestInventory InvTest = new TestInventory();
+//        TestInventory InvTest = new TestInventory();
+        
         
 //        playerOne.setName("Aaron");
 //        
@@ -68,16 +72,20 @@ public class CityOfAaron {
         
         // begin test cases for buyLand() & setOffering()
         
-        InvTest.buyLandTest1();
-        InvTest.buyLandTest2();
-        InvTest.buyLandTest3();
-        InvTest.buyLandTest4();
-        InvTest.setOfferingTest1();
-        InvTest.setOfferingTest2();
-        InvTest.setOfferingTest3();
+//        InvTest.buyLandTest1();
+//        InvTest.buyLandTest2();
+//        InvTest.buyLandTest3();
+//        InvTest.buyLandTest4();
+//        InvTest.setOfferingTest1();
+//        InvTest.setOfferingTest2();
+//        InvTest.setOfferingTest3();
         
         
         // end test cases
+        
+        //mainmenu test
+
+
         
     }
     
