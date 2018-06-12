@@ -16,6 +16,8 @@ public class Game implements Serializable{
     
     private String thePlayer;
     private Player player;
+    
+    private CropData cropData = null;
 
     public Player getPlayer() {
         return player;
@@ -36,6 +38,29 @@ public class Game implements Serializable{
     public void setThePlayer(String thePlayer) {
         this.thePlayer = thePlayer;
     }
+    
+    /**
+*	the getCrops() method
+*	Purpose: get a reference to the crop object
+*	Parameters: none
+*	Returns: a reference to a crop object
+*/
+public CropData getCrop()
+{
+return cropData;
+}
+
+/**
+*	the setCrops() method
+*	Purpose: store a reference to a crop object
+*	Parameters: a reference to a crop object
+*	Returns: none
+*/
+public void setCrop(CropData cropRef)
+{
+cropData = cropRef;
+}
+
 
     @Override
     public int hashCode() {
