@@ -52,12 +52,13 @@ public HelpMenuView()
         "**********************************\n" +
         "* CITY OF AARON: HELP MENU  *\n" +
         "**********************************\n\n" +
-        "	1 - View goals\n" +
-        "	2 - View map help\n" + 
-        "        3 - View move help\n" + 
-        "        4 - View List Help\n" +
-        "	5 - Main menu\n";
-    max = 5;
+        "	1 - What are the goals of the game?\n" +
+        "        2 - Where is the city of Aaron?\n" +
+        "	3 - How do I view the map?\n" + 
+        "        4 - How do I move to another location?\n" + 
+        "        5 - How do I display a list of animals, provisions and tools in the city storehouse?\n" +
+        "	6 - Back to the Main Menu.\n";
+    max = 6;
 }
 
 /**
@@ -100,19 +101,22 @@ public HelpMenuView()
     {
         switch (option)
         {
-            case 1: // create and start a new game
+            case 1: // View goals of game
                 viewGoals();
                 break;
-            case 2: // get and start a saved game
+            case 2: // View Whereis Viry of Aaron
+                viewWhereIs();
+                break;
+            case 3: // View Map Help
                 viewMapHelp();
                 break;
-            case 3: // get help menu 
+            case 4: // View move help
               viewMoveHelp();
                 break;
-            case 4: // save game 
+            case 5: // View lists help
               viewListHelp();
                 break;
-            case 5:
+            case 6: //exit back main menu
                 System.out.println("Thanks for playing ... goodbye.");
  
         }
@@ -128,6 +132,18 @@ public HelpMenuView()
     public void viewGoals()
     {
         System.out.println("Display view goals option selected.");
+    }
+    
+        /**
+    *	The viewGoals method
+    *	Purpose: Displays goals in game
+    *	Parameters: none
+    *	Returns: none
+    */
+    // ===================================
+    public void viewWhereIs()
+    {
+        System.out.println("Display view where is City of Aaron option selected.");
     }
     
     /**

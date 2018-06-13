@@ -40,6 +40,29 @@ public class CropView {
         // Call the buyLand( ) method in the control layer to buy the land
         CropControl.buyLand(toBuy, price, cropData);
     }
+    
+    /**
+    *	The feedPeopleView method
+    *	Purpose: interface with the user input for buying land
+    *	Parameters: none
+    *	Returns: none
+    */
+    public static void feedPeopleView()
+    {
+        
+        // Prompt the user to enter the number of bushels to set aside  
+        System.out.print("How many bushels of grain do you want to give to the people? ");
+        
+        // Get the user’s input and save it. 
+        int wheatForPeople;
+        wheatForPeople = keyboard.nextInt();
+        
+        // Call the feedPeople( ) method in the control layer to set aside wheat
+        int wheatSetAside;
+        wheatSetAside = CropControl.feedPeople(wheatForPeople, cropData);
+        System.out.print("Wheat set aside to feed the people: " + wheatSetAside);
+    }
+    
     /**
     *	The runCropsView method()
     *	Purpose: runs the Hamurabi game
@@ -50,6 +73,7 @@ public class CropView {
     {
     // call the buyLandView( ) method 
     buyLandView( );
+    feedPeopleView();
     
     // add calls to the other crop view methods
     // as they are written

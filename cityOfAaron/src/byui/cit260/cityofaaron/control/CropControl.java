@@ -18,9 +18,7 @@ public class CropControl {
     // Returns: The number of acres owned after adding land bought to acresOwned
     
   public static int buyLand(int landPrice, int acresToBuy, CropData cropData) {
-      
-     
-     
+         
       //get values from cropData
     int wheatInStore = cropData.getWheatInStore();
     int population = cropData.getPopulation();

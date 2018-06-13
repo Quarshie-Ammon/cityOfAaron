@@ -11,6 +11,7 @@ import byui.cit260.cityofaaron.model.TeamMember;
 import byui.cit260.cityofaaron.model.CropData;
 import byui.cit260.cityofaaron.control.TestInventory;
 import byui.cit260.cityofaaron.view.MainMenuView;
+import byui.cit260.cityofaaron.view.CropView;
 import byui.cit260.cityofaaron.model.Game;
 
 /**
@@ -25,10 +26,7 @@ public class CityOfAaron {
     public static void main(String[] args) throws Exception {
         MainMenuView mmv = new MainMenuView();
         mmv.displayMenuView();
-
-
-        
-    }
+     }
     
     private static Game currentGame = null;
     
