@@ -1,25 +1,19 @@
-// The MainMenuView class - part of the view layer
-// Object of this class manages the main menu
-// Author: Ammon Quarshie, Cameron Milstead, Raymond Mullins
-// Date last modified: June 8, 2018
-//-------------------------------------------------------------
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package byui.cit260.cityofaaron.view;
 
 import java.util.Scanner; 
-import cityofaaron.CityOfAaron;
-import byui.cit260.cityofaaron.model.Player;
-import byui.cit260.cityofaaron.model.*;
 
-
-
-public class MainMenuView 
-{
+public class HelpMenuView {
     Scanner keyboard = new Scanner(System.in);
     private String theMenu; 
     private int max;
     
-    HelpMenuView hmv = new HelpMenuView();
-    
+   // MainMenuView mmv = new MainMenuView();
+ 
     /**
     *	The displayMenuView method
     *	Purpose: displays the menu, gets the user's input, and does the
@@ -45,7 +39,6 @@ public class MainMenuView
         // Determine and display the next view
         } while (menuOption != max);
     }
-    
     /**
 *	The MainMenuView constructor
 *	Purpose: Initialize the menu data
@@ -53,17 +46,17 @@ public class MainMenuView
 *	Returns: none
 */
 // ===================================
-public MainMenuView()
+public HelpMenuView()
 {
     theMenu = "\n" +
         "**********************************\n" +
-        "* CITY OF AARON: MAIN GAME MENU  *\n" +
+        "* CITY OF AARON: HELP MENU  *\n" +
         "**********************************\n\n" +
-        "	1 - Start new game\n" +
-        "	2 - Get and start a saved game\n" + 
-        "        3 - Get help on playing the game\n" + 
-        "        4 - Save game\n" +
-        "	5 - Quit\n";
+        "	1 - View goals\n" +
+        "	2 - View map help\n" + 
+        "        3 - View move help\n" + 
+        "        4 - View List Help\n" +
+        "	5 - Main menu\n";
     max = 5;
 }
 
@@ -108,99 +101,72 @@ public MainMenuView()
         switch (option)
         {
             case 1: // create and start a new game
-                startNewGame();
+                viewGoals();
                 break;
             case 2: // get and start a saved game
-                startSavedGame();
+                viewMapHelp();
                 break;
             case 3: // get help menu 
-                hmv.displayMenuView();  
+              viewMoveHelp();
                 break;
             case 4: // save game 
-                displaySaveGameView(); 
+              viewListHelp();
                 break;
             case 5:
                 System.out.println("Thanks for playing ... goodbye.");
  
         }
+    }   
+    
+    /**
+    *	The viewGoals method
+    *	Purpose: Displays goals in game
+    *	Parameters: none
+    *	Returns: none
+    */
+    // ===================================
+    public void viewGoals()
+    {
+        System.out.println("Display view goals option selected.");
     }
     
-     /**
-    *	The startNewGame method
-    *	Purpose: creates game object and starts the game
-    *	Parameters: none
-    *	Returns: none
-    */
-    // ===================================
-    public void startNewGame()
-    {
-        //Create a new Game object.
-        Game theGame = new Game();
-        // Save a reference to it in the GameProject class.
-        CityOfAaron.setCurrentGame(theGame);
-        // Display the Banner Page.
-        System.out.println("Welcome to the city of Aaron.");
-        // Create a new Player object 
-        Player thePlayer = new Player();
-        // Prompt for and get the user’s name. String name;
-        String name;
-        System.out.println("Please type in your first name: ");
-        name = keyboard.next();
-        // Save the user’s name in the Player object
-        thePlayer.setName(name);
-        // Save a reference to the player object in the Game object
-        theGame.setPlayer(thePlayer);
-        // Display a welcome message
-        System.out.println("Welcome " + name + " have fun!");
-        // Display the Game menu    }
-        
-        // Create a CropData object
-        CropData cropData = new CropData();
-        
-        //  initialize  it 
-        cropData.setYear(0); 
-        cropData.setPopulation(100); 
-        cropData.setNewPeople(5); 
-        cropData.setCropYield(3); 
-        cropData.setNumberWhoDied(0); 
-        cropData.setOffering(10); 
-        cropData.setWheatInStore(2700); 
-        cropData.setAcresOwned(1000); 
-        cropData.setAcresPlanted(1000); 
-        cropData.setHarvest(3000);
-        cropData.setOfferingBushels(300);
-        cropData.setAcresPlanted(1000);
-        
-        // save a reference to it in the Game
-        theGame.setCrop(cropData);
-
-    }
     /**
-    *	The startSavedGame method
-    *	Purpose: creates game object and star
-    * ts saved game
+    *	The viewMapHelp method
+    *	Purpose: Displays goals help
     *	Parameters: none
     *	Returns: none
     */
     // ===================================
-    public void startSavedGame()
+    
+    public void viewMapHelp()
     {
-        System.out.println("Start saved game option selected.");
+        System.out.println("Display view map help option selected.");
     }
     
-
     /**
-    *	The displaySaveGameView method
-    *	Purpose: Displays save game view
+    *	The viewMoveHelp method
+    *	Purpose: Displays move help
     *	Parameters: none
     *	Returns: none
     */
     // ===================================
-    public void displaySaveGameView()
+    
+    public void viewMoveHelp()
     {
-        System.out.println("Display save game view menu option selected.");
+        System.out.println("Display view move help option selected.");
     }
+    
+    /**
+    *	The viewListHelp method
+    *	Purpose: Displays move help
+    *	Parameters: none
+    *	Returns: none
+    */
+    // ===================================
+    
+    public void viewListHelp()
+    {
+        System.out.println("Display view list help option selected.");
+    }
+    
 }
-
-
-
