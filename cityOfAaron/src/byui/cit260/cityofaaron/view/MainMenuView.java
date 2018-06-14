@@ -42,6 +42,7 @@ public class MainMenuView
         
         // Perform the desired action
         doAction(menuOption);
+        
         // Determine and display the next view
         } while (menuOption != max);
     }
@@ -58,12 +59,12 @@ public MainMenuView()
     theMenu = "\n" +
         "**********************************\n" +
         "* CITY OF AARON: MAIN GAME MENU  *\n" +
-        "**********************************\n\n" +
-        "	1 - Start new game\n" +
-        "	2 - Get and start a saved game\n" + 
-        "        3 - Get help on playing the game\n" + 
-        "        4 - Save game\n" +
-        "	5 - Quit\n";
+        "**********************************\n" +
+        "1 - Start new game\n" +
+        "2 - Get and start a saved game\n" + 
+        "3 - Get help on playing the game\n" + 
+        "4 - Save game\n" +
+        "5 - Quit\n";
     max = 5;
 }
 
@@ -101,11 +102,12 @@ public MainMenuView()
     *	Purpose: performs the selected action
     *	Parameters: none
     *	Returns: none
+     * @param option
     */
     // ===================================
     public void doAction(int option)
-    {
-        switch (option)
+    { 
+        switch (option) 
         {
             case 1: // create and start a new game
                 startNewGame();
@@ -136,23 +138,31 @@ public MainMenuView()
     {
         //Create a new Game object.
         Game theGame = new Game();
+        
         // Save a reference to it in the GameProject class.
         CityOfAaron.setCurrentGame(theGame);
+        
         // Display the Banner Page.
         System.out.println("Welcome to the city of Aaron.");
+        
         // Create a new Player object 
         Player thePlayer = new Player();
+        
         // Prompt for and get the user’s name. String name;
         String name;
         System.out.println("Please type in your first name: ");
         name = keyboard.next();
+        
         // Save the user’s name in the Player object
         thePlayer.setName(name);
+        
         // Save a reference to the player object in the Game object
         theGame.setPlayer(thePlayer);
+        
         // Display a welcome message
         System.out.println("Welcome " + name + " have fun!");
-        // Display the Game menu    }
+        
+        // Display the Game menu
         
         // Create a CropData object
         CropData cropData = new CropData();

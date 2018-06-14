@@ -43,7 +43,7 @@ public class CropView {
     
     /**
     *	The feedPeopleView method
-    *	Purpose: interface with the user input for buying land
+    *	Purpose: interface with the user input for feeding people
     *	Parameters: none
     *	Returns: none
     */
@@ -63,12 +63,19 @@ public class CropView {
         System.out.print("Wheat set aside to feed the people: " + wheatSetAside);
     }
     
+    
     /**
     *	The runCropsView method()
     *	Purpose: runs the Hamurabi game
     *	Parameters: none
     *	Returns: none
     */
+    
+    public static void plantCropsView()
+    {
+        
+    }
+    
     public static void runCropsView()
     {
     // call the buyLandView( ) method 
