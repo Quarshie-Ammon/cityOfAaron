@@ -73,14 +73,24 @@ public class CropView {
     
     public static void plantCropsView()
     {
+       //Prompt the user to enter the number of acres of land to plant with wheat
+        System.out.println("How many acres of land would you like to plant with wheat?");
         
+        //Get the user's input and save it
+        int acresPlanted;
+        acresPlanted = keyboard.nextInt();
+        
+        //Call the plantCrops() method in the control layer to set aside land for planting
+        int acresReserved = CropControl.plantCrops(acresPlanted, cropData);
+        System.out.print("Acres of land to be planted: " + acresReserved);    
     }
     
     public static void runCropsView()
     {
     // call the buyLandView( ) method 
-    buyLandView( );
+    buyLandView();
     feedPeopleView();
+    plantCropsView();
     
     // add calls to the other crop view methods
     // as they are written
