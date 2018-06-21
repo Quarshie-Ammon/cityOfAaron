@@ -25,7 +25,7 @@ public class CityOfAaron {
     
     public static void main(String[] args) throws Exception {
         MainMenuView mmv = new MainMenuView();
-        mmv.displayMenuView();
+        mmv.displayMenu();
      }
     
     private static Game currentGame = null;

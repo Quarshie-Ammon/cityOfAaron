@@ -117,7 +117,7 @@ public HelpMenuView()
               viewListHelp();
                 break;
             case 6: //exit back main menu
-                System.out.println("Thanks for playing ... goodbye.");
+            
  
         }
     }   
