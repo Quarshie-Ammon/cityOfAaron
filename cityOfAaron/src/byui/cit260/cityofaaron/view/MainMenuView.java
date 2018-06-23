@@ -71,7 +71,7 @@ public MainMenuView()
                 displaySaveGameView(); 
                 break;
             case 5:
-                System.out.println("Thanks for playing ... goodbye.");
+                System.out.println("Thanks for playing ... bye.");
  
         }
     }
@@ -116,7 +116,7 @@ public MainMenuView()
         // Create a CropData object
         CropData cropData = new CropData();
         
-        //  initialize  it 
+        //  initialize 
         cropData.setYear(0); 
         cropData.setPopulation(100); 
         cropData.setNewPeople(5); 
@@ -132,6 +132,13 @@ public MainMenuView()
         
         // save a reference to it in the Game
         theGame.setCrop(cropData);
+        
+        
+        //Display the Game menu
+    GameMenuView gameMenu = new GameMenuView();
+    gameMenu.displayMenu();
+     
+
 
     }
     /**
@@ -147,7 +154,7 @@ public MainMenuView()
         System.out.println("Start saved game option selected.");
     }
     
-
+    
     /**
     *	The displaySaveGameView method
     *	Purpose: Displays save game view
