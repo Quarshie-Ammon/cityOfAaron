@@ -57,7 +57,7 @@ public class GameMenuView extends MenuView implements Serializable{
                 manageCrops();
                 break;
             case 5: // back to main menu
-                break;
+              
         }
  
 

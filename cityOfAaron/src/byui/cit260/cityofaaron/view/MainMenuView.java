@@ -65,7 +65,7 @@ public MainMenuView()
                 startSavedGame();
                 break;
             case 3: // get help menu 
-                hmv.displayMenuView();  
+                hmv.displayMenu();  
                 break;
             case 4: // save game 
                 displaySaveGameView(); 
