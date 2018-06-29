@@ -40,7 +40,7 @@ public class CropData implements Serializable{
         return year;
     }
 
-    public void setYear(int year) {
+    public void setYears(int year) {
         this.year = year;
     }
 
