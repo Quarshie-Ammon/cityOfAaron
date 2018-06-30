@@ -18,7 +18,7 @@ import java.util.Scanner;
             "* CITY OF AARON:	LIST MENU	*\n" +
             "**********************************\n" + 
             " 1 - View the development team\n" +
-            " 2 - View a list of animals\n" +
+            " 2 - View a list of animalszzzzz\n" +
             " 3 - View a list of tools\n" +
             " 4 - View a list of provisions\n" + 
             " 5 - Return to the game menu\n",
@@ -36,17 +36,17 @@ import java.util.Scanner;
     {
         switch (option)
         {
-            case 1: // View goals of game
+            case 1: // View the deveteam
                 listTeam();
                 break;
-            case 2: // View Whereis Viry of Aaron
+            case 2: // View the animals
                 listAnimals();
                 break;
-            case 3: // View Map Help
-                listTools();
+            case 3: // View the tools
+//                listTools();
                 break;
             case 4: // View move help
-              listProvisions();
+//              listProvisions();
                 break;
             case 5: //exit back main menu
             
@@ -61,17 +61,18 @@ import java.util.Scanner;
     
     public void listAnimals()
     {
-        System.out.println("List Animals option selected.");
+  
+}
     }
     
-    public void listTools()
-    {
-        System.out.println("List tools option selected.");
-    }
-    
-    public void listProvisions()
-    {
-        System.out.println("List Provisions option selected.");
-    }
-    
-    }
+//    public void listTools()
+//    {
+//        System.out.println("List tools option selected.");
+//    }
+//    
+//    public void listProvisions()
+//    {
+//        System.out.println("List Provisions option selected.");
+//    }
+//    
+//    }

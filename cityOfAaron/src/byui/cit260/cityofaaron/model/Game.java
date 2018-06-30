@@ -19,6 +19,8 @@ public class Game implements Serializable{
     private Player player;
     private Map theMap;
     private CropData cropData;
+    private ArrayList<ListItem> animals;
+
 
     
     public Player getPlayer() {
@@ -105,8 +107,20 @@ cropData = cropRef;
     public Map getTheMap() {
         return theMap;
     } 
-
+    
+    public void setAnimals(ArrayList<ListItem> animals) {
+    	
+    	this.animals = animals;
+    	
+    }
+    
+    public ArrayList<ListItem> getAnimals() {
+    	
+    	return animals;
+    	
+}
     
     
 }
+
 

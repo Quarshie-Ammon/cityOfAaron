@@ -7,6 +7,9 @@ package byui.cit260.cityofaaron.control;
 import java.util.ArrayList; 
 import cityofaaron.CityOfAaron;
 import byui.cit260.cityofaaron.model.*;
+import byui.cit260.cityofaaron.view.*;
+
+import java.util.ArrayList;
 
 /**
  *
@@ -41,7 +44,12 @@ public class GameControl {
         theGame.setPlayer(thePlayer);
         
         createCropDataObject();
+        
+         // create the list of animals
+        createAnimalList();
+  
         createMap();
+        
         }
         
         // method prologues ….
@@ -171,7 +179,7 @@ public class GameControl {
             
             Game game = CityOfAaron.getTheGame();
             Map theMap = game.getTheMap();
-        System.out.println("The City Map");
+        System.out.println("\n**The City Map**\n");
         String column = "";
                
         //print each line (row)
@@ -196,5 +204,29 @@ public class GameControl {
             
                     
         }
+    
+    
+public static void createAnimalList()
+    {
+   
+   		
+	    ArrayList<ListItem> animals = new ArrayList<ListItem>();
+	    
+	    animals.add(new ListItem("cows", 12));
+            animals.add(new ListItem("horses", 3));
+	    animals.add(new ListItem("pigs", 7));
+	    animals.add(new ListItem("goats", 4));
+	    
+	    // Save the animals in the game
+	    theGame.setAnimals(animals);
+	
+}
+
+public void displayAnimalList() {
+            System.out.println("\nCurrent Animals:\n");
+        for (int i = 0; i < theGame.getAnimals().size(); i++) {
+            System.out.println(theGame.getAnimals().get(i).getName() + ": " +theGame.getAnimals().get(i).getNumber());
+        }  
+}
     
 }

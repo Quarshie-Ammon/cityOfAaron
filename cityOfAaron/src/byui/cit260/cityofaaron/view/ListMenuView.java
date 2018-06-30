@@ -5,10 +5,10 @@
  */
 package byui.cit260.cityofaaron.view;
 
-import byui.cit260.cityofaaron.model.CropData;
-//import byui.cit260.cityofaaron.model.Game;
-//import byui.cit260.cityofaaron.model.Player;
+import byui.cit260.cityofaaron.model.*;
+import byui.cit260.cityofaaron.control.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Scanner;
 //import java.util.Scanner;
 
@@ -17,9 +17,11 @@ import java.util.Scanner;
  * @author Saturn
  */
 public class ListMenuView extends MenuView implements Serializable{
-    Scanner keyboard = new Scanner(System.in);
-    private String theMenu; 
-    private int max;
+    //Create a new Game object.
+	 Game theGame = new Game();
+    protected final static Scanner keyboard = new Scanner(System.in);
+//    Scanner keyboard = new Scanner(System.in);
+
 /**
  * The ListMenuView constructor
  * Purpose: Initialise the list menu data
@@ -76,7 +78,11 @@ public class ListMenuView extends MenuView implements Serializable{
      */
     // =====================================================
     public void viewAnimals(){
-        System.out.println("Display a list of animals in storehouse");
+//        System.out.println("Display a list of animals in storehouse");
+
+         GameControl theGameControl = new GameControl();
+        
+        theGameControl.displayAnimalList();
     }
     
    /**

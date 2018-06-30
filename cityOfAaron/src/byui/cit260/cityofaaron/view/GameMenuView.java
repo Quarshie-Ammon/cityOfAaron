@@ -110,7 +110,7 @@ public class GameMenuView extends MenuView implements Serializable{
 //     //Display the Game menu
 //        GameMenuView gameMenu = new GameMenuView();
 //        gameMenu.displayMenu();
-      ListView lv = new ListView();
+      ListMenuView lv = new ListMenuView();
       lv.displayMenu();
  
      
