@@ -52,7 +52,7 @@ public class GameMenuView extends MenuView implements Serializable{
                 displayMap();
                 break;
             case 2: // view or print a list
-                viewprintList();
+                viewList();
                 break;
             case 3: // move to a new location
                 moveLocation();
@@ -95,13 +95,24 @@ public class GameMenuView extends MenuView implements Serializable{
         
     }
   
-    public void viewprintList()
+    public void viewList()
     {
+                /**
+        *The viewList() method
+        *	Purpose: Creates a ViewList object and calls its
+        *	displayMenuView ( ) method
+        *	Parameters: none
+        *	Returns: none
+        */
+
       // Print test output    
-    System.out.println("viewprintList() ");    
-     //Display the Game menu
-    GameMenuView gameMenu = new GameMenuView();
-    gameMenu.displayMenu();
+//    System.out.println("viewprintList() ");    
+//     //Display the Game menu
+//        GameMenuView gameMenu = new GameMenuView();
+//        gameMenu.displayMenu();
+      ListView lv = new ListView();
+      lv.displayMenu();
+ 
      
 
     }
@@ -131,4 +142,8 @@ public class GameMenuView extends MenuView implements Serializable{
   
     }
     
+
 }
+   
+    
+
