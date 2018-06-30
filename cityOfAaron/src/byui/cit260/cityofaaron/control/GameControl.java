@@ -44,7 +44,7 @@ public class GameControl {
         createMap();
         }
         
-        // method prologue ….
+        // method prologues ….
         public static void createCropDataObject()
         {
         CropData theCrops = new CropData();
