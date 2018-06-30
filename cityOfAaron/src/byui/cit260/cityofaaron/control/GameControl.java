@@ -106,12 +106,12 @@ public class GameControl {
         loc.setDescription(farmland + "\nOne bushel will plant two acres of wheat.");
         loc.setSymbol("!!!"); 
         theMap.setLocation(0, 2, loc);
-        theMap.setLocation(0, 3, loc);
-        theMap.setLocation(0, 4, loc);
         theMap.setLocation(1, 1, loc);
-        theMap.setLocation(1, 2, loc);
-        theMap.setLocation(1, 3, loc);
-        theMap.setLocation(1, 4, loc);
+        theMap.setLocation(2, 1, loc);
+        theMap.setLocation(3, 0, loc);
+        theMap.setLocation(3, 1, loc);
+        theMap.setLocation(4, 0, loc);
+        theMap.setLocation(4, 1, loc);
         theMap.setLocation(2, 0, loc);
         
         
@@ -171,7 +171,28 @@ public class GameControl {
             
             Game game = CityOfAaron.getTheGame();
             Map theMap = game.getTheMap();
-            System.out.print(theMap.getLocation(0, 0));
+        System.out.println("The City Map");
+        String column = "";
+               
+        //print each line (row)
+        for(int i = 0; i < 5; i++){
+       
+            //print column of each row
+            for(int j = 0; j< 5; j++){
+            column += "|" + theMap.getLocation(i, j).getSymbol();
+            }
+           
+            System.out.println(column + "|");                      
+            column = "";            
+}
+            System.out.println("\n"
+                + "  Map Key:\n"
+                + "  ^^^ - Village\n"
+                + "  !!! - Farmland\n"
+                + "  ~~~ - River\n"
+                + "  === - Granary and Storehouse\n"
+                + "  $$$ - Rulers Court\n"
+                + "  ### - Undeveloped Land");
             
                     
         }
