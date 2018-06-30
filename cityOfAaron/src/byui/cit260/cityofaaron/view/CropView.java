@@ -15,7 +15,7 @@ public class CropView {
     private static Scanner keyboard = new Scanner(System.in);
     
     // Get references to the Game object and the CropData object 
-    private static Game theGame = CityOfAaron.getCurrentGame(); 
+    private static Game theGame = CityOfAaron.getTheGame(); 
     private static CropData cropData = theGame.getCrop();
     
     /**

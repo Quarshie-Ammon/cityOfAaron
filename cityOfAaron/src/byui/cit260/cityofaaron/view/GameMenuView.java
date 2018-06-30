@@ -4,10 +4,14 @@
  * and open the template in the editor.
  */
 package byui.cit260.cityofaaron.view;
-
 import byui.cit260.cityofaaron.model.CropData;
-//import byui.cit260.cityofaaron.model.Game;
-//import byui.cit260.cityofaaron.model.Player;
+import byui.cit260.cityofaaron.model.Game;
+import byui.cit260.cityofaaron.model.Map;
+import byui.cit260.cityofaaron.control.GameControl;
+import byui.cit260.cityofaaron.model.*;
+import cityofaaron.CityOfAaron;
+
+
 import java.io.Serializable;
 //import java.util.Scanner;
 
@@ -66,12 +70,28 @@ public class GameMenuView extends MenuView implements Serializable{
  
     public void displayMap()
     {
-    // Print test output    
-    System.out.println("displayMap() ");
-    //Display the Game menu
-    GameMenuView gameMenu = new GameMenuView();
-    gameMenu.displayMenu();
-     
+//    System.out.println("\n"
+//                + "          >>>The City Map<<<     \n\n"
+//                + "       0     1     2     3     4   \n"
+//                + "  0 | ^^^ | === | !!! | ### | ~~~ |\n"
+//                + "  1 | $$$ | !!! | ### | ### | ~~~ |\n"
+//                + "  2 | !!! | !!! | ### | ### | ~~~ |\n"
+//                + "  3 | !!! | !!! | ### | ### | ~~~ |\n"
+//                + "  4 | !!! | !!! | ### | ### | ~~~ |\n"
+//                + "  \n Map Key:\n"
+//                + "  ^^^ - Village\n"
+//                + "  !!! - Farmland\n"
+//                + "  ~~~ - River\n"
+//                + "  === - Granary and Storehouse\n"
+//                + "  $$$ - Rulers Court\n"
+//                + "  ### - Undeveloped Land");
+//        Game theGame = CityOfAaron.getTheGame();     
+//        Map theMap = theGame.getTheMap();
+//        System.out.println(theMap);
+      GameControl theGameControl = new GameControl();
+      theGameControl.displayMap();
+       
+
         
     }
   

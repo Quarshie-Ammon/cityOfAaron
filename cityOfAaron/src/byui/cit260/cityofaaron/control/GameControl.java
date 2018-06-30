@@ -33,7 +33,7 @@ public class GameControl {
             
         //Create the Game object, save it in the main driver file 
         theGame = new Game(); 
-        CityOfAaron.setCurrentGame(theGame);
+        CityOfAaron.setTheGame(theGame);
         
         // create the player object. Save it in the game object 
         Player thePlayer = new Player(); 
@@ -103,12 +103,74 @@ public class GameControl {
         loc.setDescription(farmland + "\nOne bushel will plant two acres of wheat.");
         loc.setSymbol("!!!"); 
         theMap.setLocation(0, 2, loc);
-
-        theGame.setMap(theMap);
+        theMap.setLocation(0, 3, loc);
+        theMap.setLocation(0, 4, loc);
+        theMap.setLocation(1, 1, loc);
+        theMap.setLocation(1, 2, loc);
+        theMap.setLocation(1, 3, loc);
+        theMap.setLocation(1, 4, loc);
+        theMap.setLocation(2, 0, loc);
+        
+        
+        // define the string for a undeveloped land location
+        String undeveloped = "This is land with potential, it can be developed.";
+        
+        // set a farmland location with a hint
+        loc = new Location();
+        loc.setDescription(undeveloped + "\nA tumbleweed rolls by.");
+        loc.setSymbol("###"); 
+        for(int i = 0; i < MAX_ROW; i++)
+        {
+        theMap.setLocation(i, 3, loc);
         
         }
-
+        for(int i = 1; i < MAX_ROW; i++)
+        {
+        theMap.setLocation(i, 2, loc);
         
-    
+        }
+        
+        // define the string for a granary/storehouse location
+        String granary = "\nWheat and other supplies abound at this location.";
+        
+        // set a granary & storehouse location with a hint
+        loc = new Location();
+        loc.setDescription(granary + "\nIt's great to have supplies.");
+        loc.setSymbol("==="); 
+        theMap.setLocation(0, 1, loc);
+        
+        // define the string for a granary/storehouse location
+        String rulers = "\n An important person sits upon a throne here." ;
+        
+        // set a granary & storehouse location with a hint
+        loc = new Location();
+        loc.setDescription(rulers + "\nMoney and power.");
+        loc.setSymbol("$$$"); 
+        theMap.setLocation(1, 0, loc);
+        
+        // define the string for a granary/storehouse location
+        String village = "\n This is a place where the average people live" ;
+        
+        // set a granary & storehouse location with a hint
+        loc = new Location();
+        loc.setDescription(village + "\nLess money and power.");
+        loc.setSymbol("^^^"); 
+        theMap.setLocation(0, 0, loc);
+        
 
+        theGame.setMap(theMap);
+      
+        
+        }
+        
+    public static void displayMap() 
+        {
+            
+            Game game = CityOfAaron.getTheGame();
+            Map theMap = game.getTheMap();
+            System.out.print(theMap.getLocation(0, 0));
+            
+                    
+        }
+    
 }

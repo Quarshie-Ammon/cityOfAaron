@@ -20,22 +20,30 @@ import byui.cit260.cityofaaron.model.Game;
  */
 public class CityOfAaron {
 
-    // variable for keeping a reference to the Game object 
-    private static Game theGame = null;
+    public static Game getTheGame() {
+        return theGame;
+    }
+
+    public static void setTheGame(Game theGame) {
+        CityOfAaron.theGame = theGame;
+    }
+private static Game theGame;
+
     
     public static void main(String[] args) throws Exception {
         MainMenuView mmv = new MainMenuView();
         mmv.displayMenu();
      }
     
-    private static Game currentGame = null;
-    
-    public static Game getCurrentGame() {
-        return currentGame;
-}
+//    private static Game currentGame;
+//    
+//    public static Game getCurrentGame() {
+//        return currentGame;
+//}
+//
+//    public static void setCurrentGame(Game theGame) {
+//        currentGame = theGame;
+//    }
 
-    public static void setCurrentGame(Game theGame) {
-        currentGame = theGame;
-    }
     
 }
