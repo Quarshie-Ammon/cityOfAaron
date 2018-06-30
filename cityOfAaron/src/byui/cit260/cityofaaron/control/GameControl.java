@@ -39,6 +39,9 @@ public class GameControl {
         Player thePlayer = new Player(); 
         thePlayer.setName(name); 
         theGame.setPlayer(thePlayer);
+        
+        createCropDataObject();
+        createMap();
         }
         
         // method prologue ….
