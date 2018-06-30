@@ -47,6 +47,8 @@ public class GameControl {
         
          // create the list of animals
         createAnimalList();
+        // Create list of tools
+        createToolList();
   
         createMap();
         
@@ -228,5 +230,28 @@ public void displayAnimalList() {
             System.out.println(theGame.getAnimals().get(i).getName() + ": " +theGame.getAnimals().get(i).getNumber());
         }  
 }
+
+    public static void createToolList()
+    {
+   
+   		
+	    ArrayList<ListItem> tools = new ArrayList<ListItem>();
+	    
+	    tools.add(new ListItem("shovel", 22));
+            tools.add(new ListItem("hoe", 25));
+	    tools.add(new ListItem("plow", 7));
+	    tools.add(new ListItem("Pitch Fork", 18));
+	    
+	    // Save the tools in the game
+	    theGame.setTools(tools);
+	
+}
+
+    public void displayToolList() {
+            System.out.println("\nCurrent Tools:\n");
+            for (int i = 0; i < theGame.getTools().size(); i++) {
+                System.out.println(theGame.getTools().get(i).getName() + ": " +theGame.getTools().get(i).getNumber());
+            }  
+    }
     
 }

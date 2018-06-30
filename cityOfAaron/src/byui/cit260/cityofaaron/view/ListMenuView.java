@@ -86,19 +86,22 @@ public class ListMenuView extends MenuView implements Serializable{
     }
     
    /**
-     * The viewAnimals method
-     * Purpose: Displays a list of animals in the storehouse
+     * The viewTools method
+     * Purpose: Displays a list of tools in the storehouse
      * Parameters: none
      * Returns: none
      */
     // =====================================================
     public void viewTools(){
-        System.out.println("Display a list of tools in storehouse");
+//        System.out.println("Display a list of tools in storehouse");
+        GameControl theGameControl = new GameControl();
+        
+        theGameControl.displayToolList();
     }
     
     /**
-     * The viewAnimals method
-     * Purpose: Displays a list of animals in the storehouse
+     * The viewAProvisions method
+     * Purpose: Displays a list of Provisions in the storehouse
      * Parameters: none
      * Returns: none
      */
