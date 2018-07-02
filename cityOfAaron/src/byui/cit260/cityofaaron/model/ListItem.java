@@ -19,6 +19,10 @@ public class ListItem implements Serializable {
        this.number = number;
     }
 
+    public ListItem(String ammon_Quarshie) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public String getName() {
         return name;
     }

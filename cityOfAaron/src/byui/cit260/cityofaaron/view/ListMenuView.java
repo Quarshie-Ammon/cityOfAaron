@@ -107,7 +107,10 @@ public class ListMenuView extends MenuView implements Serializable{
      */
     // =====================================================
     public void viewProvisions(){
-        System.out.println("Display a list of provisions in storehouse");
+//        System.out.println("Display a list of provisions in storehouse");
+        GameControl theGameControl = new GameControl();
+        
+        theGameControl.displayProvisionsList();
     }
     
     /**
@@ -119,5 +122,8 @@ public class ListMenuView extends MenuView implements Serializable{
     // =====================================================
     public void viewAuthors(){
         System.out.println("Display a list of authors of the game.");
+//        GameControl theGameControl = new GameControl();
+        
+//         theGameControl.displayAuthorsList();
     }
 }

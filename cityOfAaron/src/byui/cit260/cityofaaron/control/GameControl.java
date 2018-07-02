@@ -49,6 +49,7 @@ public class GameControl {
         createAnimalList();
         // Create list of tools
         createToolList();
+        //create the list of proviscreateProvisionsList();
   
         createMap();
         
@@ -59,10 +60,10 @@ public class GameControl {
         {
         CropData theCrops = new CropData();
         
-        theCrops.setYears(0); 
         theCrops.setPopulation(100); 
         theCrops.setNewPeople(5); 
         theCrops.setCropYield(3); 
+        theCrops.setYears(0); 
         theCrops.setNumberWhoDied(0); 
         theCrops.setOffering(10); 
         theCrops.setWheatInStore(2700); 
@@ -229,6 +230,26 @@ public void displayAnimalList() {
         for (int i = 0; i < theGame.getAnimals().size(); i++) {
             System.out.println(theGame.getAnimals().get(i).getName() + ": " +theGame.getAnimals().get(i).getNumber());
         }  
+}
+
+public void createProvisionsList(){
+        
+    ArrayList<ListItem> provisions = new ArrayList<ListItem>();
+    
+            provisions.add(new ListItem("food Items", 10));
+            provisions.add(new ListItem("bottles of water", 15));
+	    provisions.add(new ListItem("toolbox", 2));
+	    
+            
+            //Save the provisions in the game
+            theGame.setProvisions(provisions);
+}
+
+public void displayProvisionsList(){
+        System.out.println("\nCurrent Provision:\n");
+        for (int i = 0; i < theGame.getProvisions().size(); i++){
+        System.out.println(theGame.getProvisions().get(i).getName() + ": " +theGame.getProvisions().get(i).getNumber());
+        }
 }
 
     public static void createToolList()
