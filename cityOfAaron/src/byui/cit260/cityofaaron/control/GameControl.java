@@ -50,6 +50,7 @@ public class GameControl {
         // Create list of tools
         createToolList();
         //create the list of proviscreateProvisionsList();
+        createProvisionsList();
   
         createMap();
         
@@ -232,7 +233,8 @@ public void displayAnimalList() {
         }  
 }
 
-public void createProvisionsList(){
+public static void createProvisionsList()
+{
         
     ArrayList<ListItem> provisions = new ArrayList<ListItem>();
     
@@ -246,7 +248,7 @@ public void createProvisionsList(){
 }
 
 public void displayProvisionsList(){
-        System.out.println("\nCurrent Provision:\n");
+        System.out.println("\nCurrent Provisions:\n");
         for (int i = 0; i < theGame.getProvisions().size(); i++){
         System.out.println(theGame.getProvisions().get(i).getName() + ": " +theGame.getProvisions().get(i).getNumber());
         }
@@ -254,8 +256,7 @@ public void displayProvisionsList(){
 
     public static void createToolList()
     {
-   
-   		
+
 	    ArrayList<ListItem> tools = new ArrayList<ListItem>();
 	    
 	    tools.add(new ListItem("shovel", 22));

@@ -21,6 +21,7 @@ public class Game implements Serializable{
     private CropData cropData;
     private ArrayList<ListItem> animals;
     private ArrayList<ListItem> tools;
+    private ArrayList<ListItem> provisions;
 
 
     
@@ -127,9 +128,20 @@ cropData = cropRef;
     	
     }
     
+    
     public ArrayList<ListItem> getTools() {
     	
     	return tools;
+    	
+}
+    public void setProvisions(ArrayList<ListItem> provisions) {
+    
+    this.provisions = provisions;
+    	
+    }
+    public ArrayList<ListItem> getProvisions() {
+    	
+    	return provisions;
     	
 }
 
@@ -141,13 +153,13 @@ cropData = cropRef;
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public void setProvisions(ArrayList<ListItem> provisions) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public Object getProvisions() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+//    public void setProvisions(ArrayList<ListItem> provisions) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+//
+//    public Object getProvisions() {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
     
     
 }
