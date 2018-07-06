@@ -1,8 +1,10 @@
 
 package byui.cit260.cityofaaron.control;
 import byui.cit260.cityofaaron.model.*;
+import exceptions.CropException;
 import java.util.Random;
 import java.util.Scanner;
+import java.io.*;
 /**
  *
  * @author Saturn
@@ -17,40 +19,51 @@ public class CropControl {
     //    and wheatInStore > acresToBuy * landPrice
     // Returns: The number of acres owned after adding land bought to acresOwned
     
-  public static int buyLand(int landPrice, int acresToBuy, CropData cropData) {
-         
+  public static void buyLand(int acresToBuy, int landPrice, CropData cropData) throws CropException 
+  {         
       //get values from cropData
-    int wheatInStore = cropData.getWheatInStore();
+//    int wheatInStore = cropData.getWheatInStore();
     int population = cropData.getPopulation();
     int acresOwned = cropData.getAcresOwned();
     
       //if acresToBuy < 0, return -1
     if (acresToBuy < 0) {
-        return -1;
-    }
-
-      //if population < (acresOwned + acresToBuy/10), return -1
-    if (population < ((acresOwned + acresToBuy) / 10)) {
-        return -1;
+        throw new CropException("A negative value was input"); 
     }
     
+    int wheat = cropData.getWheatInStore();
+
+      //if population < (acresOwned + acresToBuy/10), return -1
+//    if (population < ((acresOwned + acresToBuy) / 10)) {
+//        return -1;
+//    }
+    
        //if acresToBuy * landPrice > wheatInStore, return -1
-        if (acresToBuy * landPrice > wheatInStore) {
-        return -1;
+        if (acresToBuy * landPrice > wheat) {
+        throw new CropException("There is insufficient wheat to buy this much land");
     }
 
        //acresOwned = acresOwned + acresToBuy
        //update cropData.acresOwned variable
-    acresOwned += acresToBuy;
-    cropData.setAcresOwned(acresOwned);
+//    acresOwned += acresToBuy;
+//    cropData.setAcresOwned(acresOwned);
+    // add the number of acres to buy to current number of acres 
+        acresOwned = cropData.getAcresOwned(); 
+        acresOwned += acresToBuy; 
+        cropData.setAcresOwned(acresOwned);
 
        //wheatInStore = wheatInStore - (acresToBuy * landPrice)
        //update cropData.wheatInStore variable
-    wheatInStore -= (acresToBuy * landPrice);
-    cropData.setWheatInStore(wheatInStore);
+//    wheatInStore -= (acresToBuy * landPrice);
+//    cropData.setWheatInStore(wheatInStore);
+
+// deduct cost from wheatInStore 
+        wheat = cropData.getWheatInStore(); 
+        wheat -= (acresToBuy * landPrice); 
+        cropData.setWheatInStore(wheat);
 
       //Return number of acresOwned
-    return acresOwned;
+//    return acresOwned;
 
 } 
   

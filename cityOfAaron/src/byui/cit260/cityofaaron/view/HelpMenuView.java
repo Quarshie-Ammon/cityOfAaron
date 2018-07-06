@@ -5,6 +5,7 @@
  */
 package byui.cit260.cityofaaron.view;
 
+import byui.cit260.cityofaaron.control.CropControl;
 import java.util.Scanner; 
 
 public class HelpMenuView extends MenuView {
@@ -61,7 +62,7 @@ public HelpMenuView()
               viewMoveHelp();
                 break;
             case 5: // View lists help
-              viewListHelp();
+              viewListHelp();  
                 break;
             case 6: //exit back main menu
             

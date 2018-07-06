@@ -31,8 +31,8 @@ public class TestInventory {
         ourCrops.setAcresOwned(20);
         ourCrops.setPopulation(3);
         
-        int result = CropControl.buyLand(landPrice, acresToBuy, ourCrops);
-        System.out.println("Intended Result:" + theResult + "\nActual Result:" + result +"\n");
+        //int result = CropControl.buyLand(landPrice, acresToBuy, ourCrops);
+      //  System.out.println("Intended Result:" + theResult + "\nActual Result:" + result +"\n");
 }
     public void buyLandTest2() {
         
@@ -52,8 +52,8 @@ public class TestInventory {
         ourCrops.setAcresOwned(9);
         ourCrops.setPopulation(2);
         
-        int result = CropControl.buyLand(landPrice, acresToBuy, ourCrops);
-        System.out.println("Intended Result:" + theResult + "\nActual Result:" + result +"\n");
+     //   int result = CropControl.buyLand(landPrice, acresToBuy, ourCrops);
+      //  System.out.println("Intended Result:" + theResult + "\nActual Result:" + result +"\n");
 }
 public void buyLandTest3() {
         
@@ -73,8 +73,8 @@ public void buyLandTest3() {
         ourCrops.setAcresOwned(20);
         ourCrops.setPopulation(1);
         
-        int result = CropControl.buyLand(landPrice, acresToBuy, ourCrops);
-        System.out.println("Intended Result:" + theResult + "\nActual Result:" + result +"\n");
+      //  int result = CropControl.buyLand(landPrice, acresToBuy, ourCrops);
+      //  System.out.println("Intended Result:" + theResult + "\nActual Result:" + result +"\n");
 }
 public void buyLandTest4() {
         
@@ -94,8 +94,8 @@ public void buyLandTest4() {
         ourCrops.setAcresOwned(20);
         ourCrops.setPopulation(3);
         
-        int result = CropControl.buyLand(landPrice, acresToBuy, ourCrops);
-        System.out.println("Intended Result:" + theResult + "\nActual Result:" + result +"\n");
+      //  int result = CropControl.buyLand(landPrice, acresToBuy, ourCrops);
+      //  System.out.println("Intended Result:" + theResult + "\nActual Result:" + result +"\n");
 }
 public void setOfferingTest1() throws Exception{
         

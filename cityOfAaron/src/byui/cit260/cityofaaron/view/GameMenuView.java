@@ -58,7 +58,9 @@ public class GameMenuView extends MenuView implements Serializable{
                 moveLocation();
                 break;
             case 4: // Manage the Crops
-                manageCrops();
+//                manageCrops();
+                //CoprView buyLandView only here for testing.
+                  CropView.buyLandView();
                 break;
             case 5: // back to main menu
               

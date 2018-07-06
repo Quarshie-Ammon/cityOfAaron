@@ -74,7 +74,8 @@ public class GameControl {
         theCrops.setOfferingBushels(300); 
         theCrops.setAcresPlanted(1000);
         // Save the cropData in the Game object 
-        theGame.setCropData(theCrops);
+        theGame.setCrop(theCrops);
+
         }
         
         /**
