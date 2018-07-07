@@ -86,18 +86,19 @@ public class CropControl {
     // and a reference to a cropData object
     //Pre-conditions: wheatForPeople > 0 and wheatInStore >  wheatForPeople
     // Returns: THe amount of wheat yhou have set aside for the people
-   public static int feedPeople(int wheatForPeople, CropData cropData) {
+   public static void feedPeople(int wheatForPeople, CropData cropData) throws CropException
+   {
        //get values from cropData
        int wheatInStore = cropData.getWheatInStore();
        
        //if wheatForPeople < 0, return -1
        if (wheatForPeople < 0) {
-        return -1;
+        throw new CropException("A negative value was input"); 
     }
       
        //if wheatInStore < wheatForPeople, return -1
     if (wheatInStore < wheatForPeople) {
-        return -1;
+        throw new CropException("There is insufficient wheat in storage to give to the people");
     }
        //wheatInStore = wheatInStore - wheatForPeople
        //update cropData.wheatForPeople variable
@@ -110,7 +111,7 @@ public class CropControl {
        cropData.setWheatForPeople(wheatForPeople);
         
   //return value as wheatForPeople
-  return wheatForPeople;    
+     
  }
     //The setOffering method
     //Purpose: To calculate and pay offering

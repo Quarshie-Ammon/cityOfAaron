@@ -60,7 +60,8 @@ public class GameMenuView extends MenuView implements Serializable{
             case 4: // Manage the Crops
 //                manageCrops();
                 //CoprView buyLandView only here for testing.
-                  CropView.buyLandView();
+                // CropView.buyLandView();
+                manageCrops();
                 break;
             case 5: // back to main menu
               
@@ -138,8 +139,8 @@ public class GameMenuView extends MenuView implements Serializable{
       // Print test output    
     System.out.println("manageCrops() ");    
      //Display the Game menu
-    GameMenuView gameMenu = new GameMenuView();
-    gameMenu.displayMenu();
+    CropView cv = new CropView();
+    cv.displayMenu();
      
   
     }

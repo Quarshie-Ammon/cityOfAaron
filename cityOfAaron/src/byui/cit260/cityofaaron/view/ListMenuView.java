@@ -18,7 +18,7 @@ import java.util.Scanner;
  */
 public class ListMenuView extends MenuView implements Serializable{
     //Create a new Game object.
-	 Game theGame = new Game();
+//	 Game theGame = new Game();
     protected final static Scanner keyboard = new Scanner(System.in);
 //    Scanner keyboard = new Scanner(System.in);
 
