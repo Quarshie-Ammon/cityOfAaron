@@ -10,6 +10,8 @@ import byui.cit260.cityofaaron.model.*;
 import byui.cit260.cityofaaron.view.*;
 
 import java.util.ArrayList;
+import java.util.Scanner;
+import java.io.PrintWriter;
 
 /**
  *
@@ -20,6 +22,7 @@ public class GameControl {
     // size of the Locations array
     private static final int MAX_ROW = 5; 
     private static final int MAX_COL = 5;
+    private static Scanner keyboard = new Scanner(System.in);
     
     // reference to a Game object
     private static Game theGame;
@@ -179,6 +182,31 @@ public class GameControl {
         
         }
         
+        public static void printWriter(String filePath, ArrayList<ListItem> inventoryItems, String ListName) 
+    {
+        
+        //theGame = new Game();
+        try (PrintWriter pwout = new PrintWriter(filePath))
+        {
+            pwout.println("\n\n   " + ListName + " Stock Report                ");
+            
+            pwout.printf("%n%-20s%10s", ListName, "Quantity");
+            pwout.printf("%n%-20s%10s", "------", "--------"); 
+            for (ListItem item : inventoryItems) {
+                pwout.printf("%n%-20s%7d", item.getName(), item.getNumber());
+               
+                //System.out.println(item.getName());
+                //System.out.println(item.getNumber());
+            }
+            System.out.println("\nReport was saved to " + filePath + " successfully!");
+            pwout.close();
+        }
+        catch(Exception e)
+        {
+            System.out.println("\nThere was an error saving the the listlist to disk. " + e.getMessage());
+        }
+}
+        
     public static void displayMap() 
         {
             
@@ -228,10 +256,27 @@ public static void createAnimalList()
 }
 
 public void displayAnimalList() {
-            System.out.println("\nCurrent Animals:\n");
-        for (int i = 0; i < theGame.getAnimals().size(); i++) {
-            System.out.println(theGame.getAnimals().get(i).getName() + ": " +theGame.getAnimals().get(i).getNumber());
-        }  
+    System.out.println("\nYour animals:");
+        Game game = CityOfAaron.getTheGame();
+        
+        ArrayList<ListItem> animals = game.getAnimals();
+        
+           System.out.println("\n\n   Animals In Inventory     ");
+           System.out.printf("%n%-20s%10s", "Animal", "Quantity");
+           System.out.printf("%n%-20s%10s", "------", "--------"); 
+            for (ListItem item : animals) {
+                System.out.printf("%n%-20s%7d", item.getName(), item.getNumber());
+            }
+
+        System.out.println("\n\nWould you like to save this list as a file? (y/n)");
+        String ans = keyboard.next();
+        if ("y".equals(ans)) {
+            System.out.println("\nPlease provide the path and filename you would like to save to");
+            String fileLocation = keyboard.next();   
+            
+            GameControl.printWriter(fileLocation, animals, "Animal");
+        } 
+  
 }
 
 public static void createProvisionsList()
