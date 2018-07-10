@@ -16,14 +16,14 @@ package exceptions;
     {
        /**
         *	Default constructor
-        *	Purpose: Initializes data members to default values
+        *	Purpose: Initialises data members to default values
         *	Parameters: none
         *	Returns: none
         */
         public CropException() { }
         /**
-        *	Parameterized constructor
-        *	Purpose: Initializes data members to value passed as a parameter
+        *	Parameterised constructor
+        *	Purpose: Initialises data members to value passed as a parameter
         *	Parameters: A string containing the error message
         *	Returns: none
         */

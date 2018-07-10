@@ -202,15 +202,33 @@ public CropView()
     public static void plantCropsView()
     {
        //Prompt the user to enter the number of acres of land to plant with wheat
-        System.out.println("How many acres of land would you like to plant with wheat?");
+//        System.out.println("How many acres of land would you like to plant with wheat?");
         
         //Get the user's input and save it
         int acresPlanted;
-        acresPlanted = keyboard.nextInt();
+        boolean paramsNotOkay;
+        do
+        {
+            paramsNotOkay = false;
+            System.out.print("\nHow many bushels of grain do you want to give to the people? ");
+            acresPlanted = keyboard.nextInt();
+            try
+             {
+                CropControl.plantCrops(acresPlanted, cropData);    
+                }
+                catch(CropException e)
+                   {
+                     System.out.println("I am sorry master, I cannot do this.");
+                     System.out.println(e.getMessage()); 
+                     paramsNotOkay = true;
+                   }	
+        } while(paramsNotOkay);
+        
+//        acresPlanted = keyboard.nextInt();
         
         //Call the plantCrops() method in the control layer to set aside land for planting
-        int acresReserved = CropControl.plantCrops(acresPlanted, cropData);
-        System.out.print("Acres of land to be planted: " + acresReserved);    
+//        int acresReserved = CropControl.plantCrops(acresPlanted, cropData);
+        System.out.print("Acres of land to be planted: " + acresPlanted + "\n");    
     }
   
        /**

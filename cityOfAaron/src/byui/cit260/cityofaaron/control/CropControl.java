@@ -154,7 +154,7 @@ public class CropControl {
      * @return
      */
 
-public static int plantCrops(int acresPlanted, CropData cropData){
+public static int plantCrops(int acresPlanted, CropData cropData)throws CropException{
     
     //get values from cropData
     int wheatInStore = cropData.getWheatInStore();
@@ -168,12 +168,12 @@ public static int plantCrops(int acresPlanted, CropData cropData){
     
     //if acresToPlant < 0, return -1
     if(acresToPlant < 0){
-        return -1;
+        throw new CropException("A negative value was input");
     }
     
     //if acresOwned < acresToPlant, return -1
     if(acresOwned < acresToPlant){
-        return -1;
+        throw new CropException("There is insufficient number of acres to be planted with wheat");
     }
     
      //Calculate the number of bushels of wheat required to plant this number of acres
@@ -181,7 +181,7 @@ public static int plantCrops(int acresPlanted, CropData cropData){
     
     //if wheatInStore < acresToPlant, return -1
     if(wheatInStore < acresToPlant){
-        return -1;
+        throw new CropException("There is insufficient wheat to plant on this much land");
     }
     
     //Calculate and set amount of wheat in store after subtracting wheat planted.
