@@ -176,10 +176,10 @@ public MainMenuView()
     {
 //        System.out.println("Start saved game option selected.");
         
-        keyboard.nextLine();
+//        keyboard.nextLine();
         
      
-        System.out.println("\nPlease type in the file path to save: ");
+        System.out.println("\nPlease type in the file path of the save: ");
         String filepath = keyboard.next();
        
         GameControl.getSavedGame(filepath);

@@ -330,9 +330,11 @@ public static void createProvisionsList()
 }
 
 public void displayProvisionsList(){
+        Game game = CityOfAaron.getTheGame();
+      
         System.out.println("\nCurrent Provisions:\n");
-        for (int i = 0; i < theGame.getProvisions().size(); i++){
-        System.out.println(theGame.getProvisions().get(i).getName() + ": " +theGame.getProvisions().get(i).getNumber());
+        for (int i = 0; i < game.getProvisions().size(); i++){
+        System.out.println(game.getProvisions().get(i).getName() + ": " +game.getProvisions().get(i).getNumber());
         }
 }
 
@@ -352,10 +354,12 @@ public void displayProvisionsList(){
 }
 
     public void displayToolList() {
+            Game game = CityOfAaron.getTheGame();
+              
             System.out.println("\nCurrent Tools:\n");
-            for (int i = 0; i < theGame.getTools().size(); i++) {
-                System.out.println(theGame.getTools().get(i).getName() + ": " +theGame.getTools().get(i).getNumber());
+            for (int i = 0; i < game.getTools().size(); i++) {
+                System.out.println(game.getTools().get(i).getName() + ": " +game.getTools().get(i).getNumber());
             }  
     }
-    
+   
 }
