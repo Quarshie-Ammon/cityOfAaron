@@ -174,7 +174,18 @@ public MainMenuView()
     // ===================================
     public void startSavedGame()
     {
-        System.out.println("Start saved game option selected.");
+//        System.out.println("Start saved game option selected.");
+        
+        keyboard.nextLine();
+        
+     
+        System.out.println("\nPlease type in the file path to save: ");
+        String filepath = keyboard.next();
+       
+        GameControl.getSavedGame(filepath);
+       
+        GameMenuView gmv = new GameMenuView();
+gmv.displayMenu();
     }
     
     
@@ -187,7 +198,18 @@ public MainMenuView()
     // ===================================
     public void displaySaveGameView()
     {
-        System.out.println("Display save game view menu option selected.");
+     // Get rid of nl character left in the stream
+        keyboard.nextLine();
+        
+        // Prompt user for filepath 
+        System.out.println("\nPlease enter location of saved game:");
+        String filepath = keyboard.next();
+        
+        // Create instance of game
+        Game theGame = CityOfAaron.getTheGame();
+        
+        // Save game
+GameControl.saveGame(theGame, filepath);
     }
 }
 

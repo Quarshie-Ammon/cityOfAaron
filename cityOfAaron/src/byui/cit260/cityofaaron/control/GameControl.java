@@ -12,6 +12,11 @@ import byui.cit260.cityofaaron.view.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.PrintWriter;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.IOException;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 
 /**
  *
@@ -58,6 +63,37 @@ public class GameControl {
         createMap();
         
         }
+        
+    public static void saveGame(Game theGame, String filePath) {
+        
+        try (FileOutputStream fops = new FileOutputStream(filePath)) {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            output.writeObject(theGame);
+            System.out.println("\nGame saved.");
+
+        }
+        catch(Exception x)
+        {
+            System.out.println("\nThere was an error saving the game");
+        }
+}
+    
+    
+    public static void getSavedGame(String filePath) {
+        Game theGame = null;
+        
+        try (FileInputStream fips = new FileInputStream(filePath)) {
+            ObjectInputStream input = new ObjectInputStream(fips);
+            theGame = (Game) input.readObject();
+            CityOfAaron.setTheGame(theGame);
+            System.out.println("\nGame loaded.");
+
+        }
+        catch(Exception e)
+        {
+            System.out.println("\nThere was an error reading the saved gamed");
+        }
+}
         
         // method prologues ….
         public static void createCropDataObject()
