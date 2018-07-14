@@ -356,9 +356,23 @@ public void displayProvisionsList(){
     public void displayToolList() {
             Game game = CityOfAaron.getTheGame();
               
-            System.out.println("\nCurrent Tools:\n");
-            for (int i = 0; i < game.getTools().size(); i++) {
-                System.out.println(game.getTools().get(i).getName() + ": " +game.getTools().get(i).getNumber());
+            ArrayList<ListItem> tools = game.getTools();
+            
+            System.out.println("\n\n     Tool Stock Report:");
+            System.out.printf("%n%-20s%10s", "Tool", "Quantity");
+            System.out.printf("%n%-20s%10s", "----", "--------"); 
+            
+            for (ListItem item : tools) {
+                System.out.printf("%n%-20s%7d", item.getName(), item.getNumber());
+            }
+            
+            System.out.println("\n\nWould you like to save this list as a file? (y/n)");
+            String ans = keyboard.next();
+        if ("y".equals(ans)) {
+            System.out.println("\nPlease provide the path and filename you would like to save to");
+            String fileLocation = keyboard.next();   
+            
+            GameControl.printWriter(fileLocation, tools, "Tool");
             }  
     }
    
