@@ -137,7 +137,7 @@ public CropView()
     *	Returns: none
     */
     public static void sellLandView(){
-        System.out.print("sellLAndView method /n");
+        System.out.print("sellLAndView method \n");
     }
     
     /**
@@ -147,7 +147,7 @@ public CropView()
     *	Returns: none
     */
         public static void payOfferingsView(){
-        System.out.print("payOfferingsView method /n");
+        System.out.print("payOfferingsView method \n");
     }
     
     /**
@@ -238,7 +238,7 @@ public CropView()
     *	Returns: none
     */
     public static void showStarvedView(){
-        System.out.print("showStarvedView method /n");
+        System.out.print("showStarvedView method \n");
     }
     
     public static void runCropsView()
@@ -259,7 +259,7 @@ public CropView()
     *	Returns: none
     */
     public static void displayCropReport(){
-        System.out.print("displayCropReport method /n");
+        System.out.print("displayCropReport method\n");
     }
 
 

@@ -55,7 +55,7 @@ public class GameMenuView extends MenuView implements Serializable{
                 viewList();
                 break;
             case 3: // move to a new location
-                moveLocation();
+                moveToNewLocation();
                 break;
             case 4: // Manage the Crops
 //                manageCrops();
@@ -120,16 +120,31 @@ public class GameMenuView extends MenuView implements Serializable{
 
     }
    
-    public void moveLocation()
+    public void moveToNewLocation()
     {
-      // Print test output    
-    System.out.println("moveLocation() ");    
-     //Display the Game menu
-    GameMenuView gameMenu = new GameMenuView();
-    gameMenu.displayMenu();
-     
-
+        int rowPosition, colPosition;
+        String locationDescription = "";
         
+        Game game = CityOfAaron.getTheGame();
+        
+        System.out.println("Enter the coordinates of the location you want to move to.\n");
+        
+        System.out.println("Enter the x-coordinate:");
+        
+        rowPosition = getValidInt();
+        
+        System.out.println("Enter the y-coordinate:");
+        
+        colPosition = getValidInt();
+        
+        // update row and column position
+        GameControl theGameControl = new GameControl();
+        theGameControl.setPlayerLocation(rowPosition, colPosition);
+        
+        //display string the descibes location        
+        locationDescription = game.getTheMap().getLocation(rowPosition-1, colPosition-1).getDescription();
+        
+        System.out.println("\n"+locationDescription);
         
         
     }
@@ -144,6 +159,23 @@ public class GameMenuView extends MenuView implements Serializable{
      
   
     }
+    
+    public int getValidInt()
+    {
+        int inputInt = 0;
+        do
+        {
+            inputInt = keyboard.nextInt();
+            if(inputInt < 1 || inputInt > 5)
+            {
+               System.out.println("\nInvalid entry. Value must be between 1 and 5. Try again"); 
+            }
+        }while(inputInt < 1 || inputInt > 5);
+        
+        return inputInt;
+    
+    }
+
     
 
 }

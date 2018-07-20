@@ -14,8 +14,13 @@ import java.util.Objects;
  */
 public class Player implements Serializable{
     private String name;
+    private int rowPosition;
+    private int colPosition;
 
+    
     public Player() {
+        rowPosition = 0;
+        colPosition = 0;
     }
 
 
@@ -26,6 +31,24 @@ public class Player implements Serializable{
     public void setName(String name) {
         this.name = name;
     }
+
+    public int getRowPosition() {
+        return rowPosition;
+    }
+
+    public void setRowPosition(int rowPosition) {
+        this.rowPosition = rowPosition;
+    }
+
+    public int getColPosition() {
+        return colPosition;
+    }
+
+    public void setColPosition(int colPosition) {
+        this.colPosition = colPosition;
+    }
+    
+    
 
     @Override
     public int hashCode() {
